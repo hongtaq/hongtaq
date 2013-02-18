@@ -1,4 +1,0 @@
-1.以后各应用尽量使用统一的数据库leadcloud
-2.所有的数据库编码要求为utf8
-3.根据不同的模块，数据库表需要添加前缀，比如core_users代表模块core的数据库表（以后有可能被其他模块用到，但以core为主，因此前缀为core）
-4.表名一般以实体对象的复数英文表述，统一大写（为避免linux系统大小写不一致可能出现的问题），比如正确的PREFIX_USERS,错误的prefix_user,PREFIX_YONGHU。两个实体对象的关联表用下划线连接实体非复数英文名，如PREFIX_USER_ROLE
