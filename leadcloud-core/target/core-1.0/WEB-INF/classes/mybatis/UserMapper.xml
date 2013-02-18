@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="cn.leadcloud.core.mapper.UserMapper">
+
+
+	<select id="get" parameterType="String" resultType="User">
+     	<![CDATA[ 
+	     	SELECT USERNAME,
+			       PASSWORD,
+			       EMAIL,
+			       STATUS,
+			       NICKNAME,
+			       REALNAME,
+			       CREATED,
+			       MODIFIED,
+			       RIGHTS,
+			       ROLE_ID,
+			       LAST_LOGIN,
+			       RIGHTS
+			 FROM CORE_USERS
+			WHERE USERNAME = #{username} 
+     	]]>   
+    </select>
+    
+    <select id="list" resultType="User">
+     	<![CDATA[ 
+	     	SELECT USERNAME,
+			       PASSWORD,
+			       EMAIL,
+			       STATUS,
+			       NICKNAME,
+			       REALNAME,
+			       CREATED,
+			       MODIFIED,
+			       RIGHTS,
+			       ROLE_ID,
+			       LAST_LOGIN,
+			       RIGHTS
+			FROM CORE_USERS 
+     	]]>   
+    </select>
+    
+    <delete id="delete" parameterType="String">
+     	<![CDATA[ 
+	     	DELETE 
+			FROM CORE_USERS WHERE USERNAME=#{username}
+     	]]>   
+    </delete>
+    
+    <select id="getRoles" parameterType="User" resultType="Role">
+     	<![CDATA[ 
+	     	SELECT R.ROLEID,
+			       R.NAME,
+			       R.RIGHTS,
+			       R.DESCRIPTION
+			FROM CORE_ROLES R,CORE_USER_ROLE U_R
+			WHERE R.ROLEID = U_R.ROLE_ID AND U_R.USERNAME = #{username} 
+     	]]>   
+    </select>
+    
+    
+      <select id="getCountByEmail" parameterType="String" resultType="int">
+     	<![CDATA[ 
+	     	SELECT COUNT(R.USERNAME)
+			FROM CORE_USERS R
+			WHERE R.EMAIL = #{email} 
+     	]]>   
+    </select>
+    
+    
+    
+    
+    <select id="getUserByNameAndPwd" parameterType="User" resultType="User">
+	     	select r.username,r.password,r.nickname,r.realname,r.email,r.status,r.role_id,r.rights
+			from core_users r
+			where r.username = #{username} 
+		<if test="password!=null and password!=''"> and  r.password=#{password} </if>
+    </select>
+    
+    
+    <select id="getCount" parameterType="User" resultType="int">
+		select count(username) from core_users where status=0 
+		<if test="nickname!=null and nickname!=''">
+		 and nickname like "%"#{nickname}"%" 
+		</if>
+		<if test="roleId!=null and roleId!=0">
+		and role_id=#{roleId} 
+		</if>
+		<if test="lastLoginStart!=null">
+		and last_login&gt;=#{lastLoginStart} 
+		</if>
+		<if test="lastLoginEnd!=null">
+		and last_login&lt;=#{lastLoginEnd} 
+		</if>
+	</select>
+    
+    
+    <insert id="insert" parameterType="User"> 
+    	<![CDATA[ 
+     INSERT INTO CORE_USERS 
+     (USERNAME,PASSWORD,NICKNAME,EMAIL,CREATED,LAST_LOGIN,MODIFIED,STATUS,ROLE_ID,RIGHTS) 
+     values 
+     (#{username},#{password},#{username},#{email},#{created},#{lastLogin},#{modified},#{status},#{roleId},#{rights}) 
+    ]]>   	
+   </insert> 
+   
+   
+   <insert id="insertUser" parameterType="User"  >
+    	<![CDATA[
+	 INSERT INTO CORE_USERS 
+     (USERNAME,PASSWORD,NICKNAME,EMAIL,CREATED,LAST_LOGIN,MODIFIED,STATUS,ROLE_ID,RIGHTS) 
+     values 
+     (#{username},#{password},#{username},#{email},#{created},#{lastLogin},#{modified},#{status},#{roleId},#{rights}) 
+	   ]]> 
+	</insert> 
+   
+   
+      <insert id="insertusersRole" parameterType="User"> 
+      INSERT INTO CORE_USER_ROLE 
+      (ROLE_ID,USERNAME) 
+       values 
+     <if test="roleId!=null">
+      (#{roleId}, #{username}) 
+		</if>
+    <if test="roleId==null ">
+    (ROLE_USER, #{username}) 
+		</if>
+   </insert> 
+   
+ 
+    <update id="updateUserRights" parameterType="User">
+		update core_users set rights=#{rights} where username=#{username}
+	</update>
+     
+ 
+    <update id="updatelogin" parameterType="User">
+     update core_users set last_login =#{lastLogin}  where username =#{username}
+	</update>
+	
+	
+	 <update id="update" parameterType="User">
+      update core_users set  MODIFIED =#{modified}
+      <if test="nickname!=null and nickname!=''">,NICKNAME =#{nickname} </if>
+      <if test="realname!=null and realname!=''">,REALNAME =#{realname} </if>
+      <if test="password!=null and password!=''">,PASSWORD=#{password} </if>
+       where username =#{username}
+	</update>
+	
+
+	
+ 
+   <resultMap type="User" id="userAndRoleResultMap">
+		<id column="username" property="username"/>
+		<result column="nickname" property="password"/>
+		<result column="status" property="status"/>
+		<result column="last_login" property="lastLogin"/>
+		<result column="role_id" property="roleId"/>
+	  <association property="role" column="role_id" javaType="Role">
+			<result column="role_id" property="roleid"/>
+			<result column="name" property="name"/>
+			<result column="rights" property="rights"/>
+		</association>
+	</resultMap> 
+	
+	<select id="listPageUser" parameterType="User" resultMap="userAndRoleResultMap">
+		select u.username,u.nickname, u.status,u.last_login, r.roleid,r.name, r.rights
+		from core_users u 
+		left join core_roles r on u.role_id=r.roleid
+		where u.status=0 
+		<if test="username!=null and username!=''">
+			and u.username like "%"#{username}"%" 
+		</if>
+		
+		<if test="lastLoginStart!=null">
+		and u.last_login&gt;=#{lastLoginStart} 
+		</if>
+		<if test="lastLoginEnd!=null">
+		and u.last_login&lt;=#{lastLoginEnd} 
+		</if>
+	</select>
+	
+
+</mapper>

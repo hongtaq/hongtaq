@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="cn.leadcloud.core.mapper.AccountMapper">
+
+
+   <select id="get" parameterType="String" resultType="Account">
+     	<![CDATA[ 
+	     	select accountid,
+	     	username,
+	        blance,
+	     	created,
+	        rechangetime
+	     	from core_account
+	      where accountid= #{accountId} 
+     	]]>   
+    </select>
+
+     <select id="list" resultType="Order">
+     	<![CDATA[ 
+	     	select accountid,
+	     	username,
+	        blance,
+	     	created,
+	        rechangetime
+	     	from core_account
+     	]]>   
+    </select>
+    
+   
+	
+	
+  
+    
+    
+    <select id="listPageOrder" parameterType="Order" resultType="Order">
+		select orderid,
+	         username,
+	        servicename,
+	       	amount,
+	     	created,
+	     	status,
+	     	paidtime,
+	     	is_paid,
+	     	note
+	       from core_order 
+		   where status=0 
+		<if test="username!=null and username!=''">
+		 and username like "%"#{username}"%" 
+		</if>
+		<if test="servicename!=null and servicename!=0">
+		and servicename=#{servicename} 
+		</if>
+		<if test="createdEnd!=null">
+		and created&gt;=#{createdStart} 
+		</if>
+		<if test="createdEnd!=null">
+		and created&lt;=#{createdEnd} 
+		</if>
+	</select>
+      
+    
+    <delete id="delete" parameterType="Order">
+     	<![CDATA[ 
+	     	delete
+			from core_order  where orderid= #{orderid} 
+     	]]>   
+    </delete>
+    
+    
+    
+   <insert id="insert" parameterType="Order"> 
+     insert into core_order
+      (orderid,username,servicename,amount,created,status,paidtime,is_paid,note)
+      values 
+     (#{orderId},#{username},#{servicename},#{amount},#{created},#{status},#{paidtime},#{isPaid},#{note}) 
+    	
+   </insert>  
+    
+
+</mapper>

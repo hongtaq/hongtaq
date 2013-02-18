@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.leadcloud.core.mapper.RoleMapper">
+
+
+   <resultMap type="Role" id="roleResultMap">
+		<id column="roleid" property="roleId"/>
+		<result column="name" property="name"/>
+		<result column="rights" property="rights"/>
+		<result column="description" property="description"/>
+	</resultMap> 
+
+<select id="get" parameterType="String" resultType="Role">
+     	<![CDATA[ 
+     	SELECT ROLEID,NAME, DESCRIPTION, RIGHTS FROM CORE_ROLES
+			WHERE ROLEID = #{roleId} 
+
+     	]]>   
+    </select>
+    
+    <select id="list" resultType="Role">
+     	<![CDATA[ 
+	     	SELECT ROLEID ,NAME ,DESCRIPTION , RIGHTS  FROM CORE_ROLES
+     	]]>   
+    </select>
+    
+    <delete id="delete" parameterType="String">
+	     	DELETE 
+			FROM CORE_ROLES WHERE ROLEID=#{roleId}
+    </delete>
+    
+    
+    
+    <update id="updateRoleRights" parameterType="Role">
+    update core_roles set rights =#{rights} where ROLEID=#{roleId}
+	</update>
+    
+    
+    
+    
+    <insert id="insert" parameterType="Role"> 
+   INSERT INTO CORE_ROLES 
+   (ROLEID ,NAME ,DESCRIPTION , RIGHTS) 
+   VALUES 
+  (#{roleId},#{name},#{description},#{rights}) 
+</insert> 
+   
+ 
+ 
+   <select id="getCountByName" parameterType="Role" resultType="int">
+		select count(roleId) from core_roles where name=#{name}
+		<if test="id!=null">
+		 and roleIid=#{roleId}
+		</if>
+	</select>
+	
+	<select id="getRoleById" parameterType="String" resultMap="roleResultMap">
+		select * from  core_roles where roleid=#{roleId}
+	</select>
+	
+	
+	
+	<update id="updateRoleBaseInfo" parameterType="Role">
+		update core_roles set name=#{name} where roleid=#{roleId}
+	</update>
+	
+	
+	
+	<select id="listAllRoles" resultMap="roleResultMap">
+		select * from core_roles
+	 </select>
+
+	
+</mapper>

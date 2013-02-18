@@ -1,0 +1,265 @@
+/* CSS Document */
+body{
+	margin:2px 0px auto;padding:0px;
+}
+.main-width{
+	width:946px;margin:0 auto;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clear{
+	clear:both;height:0px;overflow:hidden;
+}
+.big-blue{
+	color:#00468c;font-size:16px;font-weight:bold;font-family:"微软雅黑";
+}
+.big-black{
+	color:#000;font-size:16px;font-weight:bold;font-family:"微软雅黑";
+}
+
+
+.middle-black{
+	color:#000;font-size:14px;font-weight:bold;font-family:"微软雅黑";
+}
+.small-gray{
+	font-size:14px;color:#ababab;text-decoration:none;
+}
+a.small-blue{
+	font-size: 13px;
+	color: #0033CC;
+	text-decoration: none;
+}
+a.small-black{
+	font-size:14px;color:#565656;text-decoration:none;
+}
+.navbar{
+	height:46px;background:url(../images/1_r3_c1.png) repeat-x;
+}
+.nav{
+	list-style:none;margin:0px;
+}
+.nav .active{
+	background:url(../images/1_r3_c5.png);color:#00468c;
+}
+.nav li.separator{
+	float:left;width:1px;height:20px;margin-left:-2px;margin-top:14px;background:url(../images/separator.png) no-repeat;
+}
+.nav a li{
+	float:left;width:115px;height:30px;margin:0px;margin-left:-2px;padding:15px 0px 0px 0px;text-align:center;color:#fff;font-size:16px;font-weight:bold;font-family:"微软雅黑";text-decoration:none;
+}
+.nav a:hover li{
+	background:url(../images/1_r3_c5.png);color:#00468c;
+}
+.menu-border{
+	width:222px;height:4px;background:url(../images/border.png);
+}
+.menu .submenu{
+	padding:10px 60px;color:#3c3c3c;
+}
+.menu .active{
+	padding:10px 60px;background:#e0ecf0;color:#000;
+}
+.menu a{
+	text-decoration:none;
+}
+.menu a:hover .submenu{
+	background:#eee;
+}
+.menu .sub-border{
+	height:3px;width:209px;background:url(../images/menu-border.png);
+}
+.product{width:663px;min-height:360px;margin-top:10px;padding:20px;border-width:2px 1px 1px 1px;border-color:#cdcdcd;border-style:solid;border-radius:4px;}
+.product .content{
+	padding:10px;line-height:30px;color:#555;font-size:14px; text-indent:2em;
+}
+
+
+
+
+
+
+
+
+.usernavbar{
+	 width:956px; height:46px;background:url(../images/1_r3_c1.png) repeat-x; margin: 0 auto; border-radius:3px;}
+
+.usermain-width{
+	width:956px;margin:0 auto;
+}
+
+
+.usernav{
+	list-style:none;margin:0px;
+}
+.usernav .useractive{
+	background:url(../images/1_r3_c5.png);color:#00468c;
+}
+.usernav li.separator{
+	float:left;width:1px;height:20px;margin-left:-2px;margin-top:14px;background:url(../images/separator.png) no-repeat;
+}
+.usernav a li{
+	float:left;width:115px;height:30px;margin:0px;margin-left:-2px;padding:15px 0px 0px 0px;text-align:center;color:#fff;font-size:16px;font-weight:bold;font-family:"微软雅黑";text-decoration:none;
+}
+.usernav a:hover li{
+	background:url(../images/1_r3_c5.png);color:#00468c;
+}
+
+
+
+
+
+.usersecnavbar{
+	  width:952px; height:46px; background-color:#efefef; margin: 0px auto; border-radius:3px; }
+
+.usersecmain-width{
+	  width:952px; margin:0 auto;
+}
+
+.usersecnav{
+	list-style:none;margin:0px;
+}
+.usersecnav  usersecactive{
+	  color:#00468c; background-color:#000;
+}
+.usersecnav li.separator{
+	float:left;width:1px;height:20px;margin-left:-2px;margin-top:14px;background:url(../images/separator.png) no-repeat;
+}
+.usersecnav a li{
+	float:left;width:115px;height:27px;margin:0px;margin-left:-2px;padding:12px 0px 0px 0px;text-align:center;color:#000; font-size:16px;font-family:"微软雅黑";text-decoration:none;
+}
+.usersecnav a:hover li{
+	color:#00468c;
+}
+
+
+
+
+
+.userdetnavbar{
+	 width:600px; height:46px; background-color:#fff; margin: 0px 0px 0px 0px;}
+
+.userdetmain-width{
+	width:600px;margin:0 auto;
+}
+
+
+.userdetnav{
+	list-style:none;margin:0px;
+}
+.userdetnav .userdetactive{
+	background:url(../images/kuang1.png) no-repeat;color:#00468c; text-align:center;
+}
+
+
+.userdetnav .userNdetactive{
+	background:url(../images/huikuang.png) no-repeat;color:#00468c;;
+}
+
+.userdetnav li.separator{
+	float:left;width:1px;height:25px;margin-left:-2px;margin-top:10px;background:url(../images/separator.png) no-repeat;
+}
+.userdetnav a li{
+	float:left;width:105px;height:27px;margin:0px;margin-left:-2px;padding:10px 0px 0px 0px;text-align:center;color:#000; font-size:16px;font-family:"微软雅黑";text-decoration:none;
+}
+.userdetnav a:hover li{
+	color:#00468c;
+}
+
+
+
+#customers
+  {
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:100%;
+  border-collapse:collapse;
+  }
+
+#customers td, #customers th 
+  {
+  font-size:12px;
+  border:1px solid #0066FF;
+  padding:3px 7px 2px 7px;
+  }
+
+#customers th 
+  {
+	font-size: 12px;
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	background-color: #fff;
+	color: #000;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	
+  }
+
+#customers tr.alt td 
+  {
+  color:#000000;
+  background-color:#E6E6FA ;
+  }
+/**userinfo页面开始**/
+.userSeclectActivate{  color:#FFF;   background:url(../images/user-selectbg.png) no-repeat center; font-size:14px;  padding:0px 0px 0px 20px; line-height:67px ; text-align:center ;}
+.userSeclectActivate a:link, .userSeclectActivate a:visited{text-decoration: none;}
+.userSeclectActivate a:hover{text-decoration:underline;}
+.userSecNoAct{font-size:14px;  padding:0px 0px 0px 20px; line-height:67px;text-align:center;}
+.userSecNoAct a:link, .userSecNoAct a:visited{text-decoration: none;}
+.userSecNoAct a:hover{text-decoration:underline;}
+
+.userInfoSecAct{font-size:14px;  padding:0px 0px 0px 20px; line-height:67px ; text-align:center ;}
+
+.userinfoFirst{ float:left; font-size:14px; font-weight:bold; padding:20px 0px 0px 30px; width:140px;}
+ .userinfoSecond{ float:left; font-size:14px;  padding:20px 0px 0px 5px; width:360px} 
+ .userinfoThrid1{float:left; padding:5px 0px 0px 20px; width:160px; text-height:30px;}
+ .userinfoThrid2{float:left; padding:20px 0px 0px 10px;}
+  .userinfoThrid3{font-size:12px;  float:left;padding:30px 0px 0px 0px;}
+  .userinfoList5{height:30px; text-height:29px; text-align:float; alignment-adjust:middle; padding:10px 0px 0px 35px; color:#666; font-weight:bold; font-size:14px;}
+/**userinfo页面结束**/
+
+/**usercenter页面开始**/
+.uc-main-width{ width:960px; margin:0 auto; padding-top:4px;text-align:right;font-size:12px;color:#555;}
+.ucuc{ padding:26px 0px 0px 22px;font-weight:bold;  font-size:30px; color:#000; float:left;}
+.uc-mainth{  width:943px;border-width:3px 5px 5px 5px;  border-color:#a5c7e3;
+    border-style:solid; border-radius:4px; margin:3px auto;}
+	
+.userthreeBox{margin:29px 10px 3px 20px; font-weight:bolder;float:left;}
+.userthreeBoxa{float:center; color:#39F; font-size:12px; }
+.userthreeBoxa a:link,.userthreeBoxa a:visited{ text-decoration:none; }	
+.userthreeBoxa a:hover{ text-decoration:underline;}
+.uc-threeCon1{font-size:14px ; color:#000; font-weight:bolder ; float:left; line-height:30px; margin:6px 10px 3px 56px;}
+.uc-threeCon2{font-size:16px ; color:#F03; font-weight:bolder ; float:left; line-height:30px;  margin:6px 0px 0px 0px;}
+.uc-menul{height:280px; border:3px solid #a5c7e3;padding:15px 0px 25px 0px ;   font-size:14px; }
+.uc-menli{ padding:15px 0px 15px 66px;  font-size:14px;  }	
+.uc-menli a{color:#000; }
+.uc-menli a:link, .uc-menli a:visited{ text-decoration:none; }		
+.uc-menli a:hover{ text-decoration:underline;}	   
+.uc-botlink{float:right; color:#06F;}
+.uc-botlink a:link, .uc-botlink a:visited{ text-decoration:none;}
+.uc-botlink a:hover { text-decoration:underline;}
+/**usercenter页面结束**/
+
+/**accountmanager页面开始**/
+.ac-menul{height:260px; border:3px solid #a5c7e3;padding:10px 0px 15px 0px ;   font-size:14px; }
+.ac-menli{ padding:15px 0px 15px 10px;  font-size:14px;  }	
+.ac-menli a{color:#000; }
+.ac-menli a:link, .uc-menli a:visited{ text-decoration:none; }		
+.ac-menli a:hover{ text-decoration:underline;}	
+
+/**用户帮助开始**/
+.service{position:fixed;right:0;top:120px;width:100px;height:240px}
+.service .service_caption{background:#0066ff;border:1px solid #f87b00;text-align:center;color:#fff}
+.service .service_caption_small{float:right;background:#ff9e00;border:1px solid #f87b00;text-align:center;color:#fff;width:12px;height:80px;padding:2px;line-height:18px}
+.service .service_caption_small a{color:#fff;line-height:18px}
+.service .service_box{background:#fcfcfc;border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;}
+.service .service_area{margin:6px}
+.service .service_content{padding:6px 0 12px 0;border-bottom:1px dotted #c6c6c6;color:#7d7d7d}
+/**用户帮助结束**/
+.aboutusMenu{width:120px; height:400px; border-width:0px 2px 0px 0px;border-color:#cdcdcd; border-style:solid; margin:10px 10px 10px 10px; padding:20px 0px 20px 10px;}
+.aboutusMenu  ul {list-style:none ;margin:0px; text-height:30px;} 
+.aboutusMenu  ul li { height:30px; float:left; font-size:14px; color:#000; text-height:30px;} 
+.aboutusMenu  ul li a:link, .aboutusMenu ul li a:visited{ text-decoration:none;}
+.aboutusMenu  ul li a:hover{ text-decoration:underline;}
