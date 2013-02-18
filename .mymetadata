@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="leadcloud-core"
+  name="leadcloud1"
   id="myeclipse.1357017492582"
   context-root="/core"
   j2ee-spec="6.0"
