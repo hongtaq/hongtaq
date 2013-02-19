@@ -54,10 +54,9 @@ public class AccountController {
 	
 	//查看
 	@RequestMapping(value="/{accountId}",method=RequestMethod.GET)
-	public String view(@PathVariable Integer orderId, HttpServletRequest request,ModelMap model){
+	public String view(@PathVariable Integer accountId, HttpServletRequest request,ModelMap model){
 		
-		Order  order=orderService.get(orderId);
-		model.addAttribute("order", order);
+	
 		return "";
 	}
 	

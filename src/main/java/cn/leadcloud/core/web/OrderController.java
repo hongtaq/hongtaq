@@ -96,12 +96,23 @@ public class OrderController {
 		 order.setStatus(0);
 		 order.setIsPaid(0);
 		 orderService.insert(order);
-		
-		return "redirect:/";
+		//return "redirect:/";
+		 model.addAttribute("order", order);
+		 return "order/orderdetail";
 	}
 	
 	
-	
+	//添加动作
+		@RequestMapping(value="/newOrder",method=RequestMethod.POST)
+		@Transactional
+		public String prenewOrder(HttpServletRequest request, Order order,ModelMap model){
+			HttpSession session=request.getSession();
+			 User user=(User)session.getAttribute(Const.SESSION_USER);
+			 /**获取今天最新的订单***/
+			
+			 return "order/buysrore";
+		}
+		
 	
 	
 	

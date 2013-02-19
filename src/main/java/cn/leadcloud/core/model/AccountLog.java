@@ -11,6 +11,7 @@ public class AccountLog {
    
    private Account account;
    
+   
    private String accountId;
 	
 	private User user;
