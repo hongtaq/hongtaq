@@ -103,14 +103,14 @@ public class OrderController {
 	
 	
 	//添加动作
-		@RequestMapping(value="/newOrder",method=RequestMethod.POST)
+		@RequestMapping(value="/prenewOrder",method=RequestMethod.GET)
 		@Transactional
 		public String prenewOrder(HttpServletRequest request, Order order,ModelMap model){
 			HttpSession session=request.getSession();
 			 User user=(User)session.getAttribute(Const.SESSION_USER);
 			 /**获取今天最新的订单***/
 			
-			 return "order/buysrore";
+			 return "order/buystore";
 		}
 		
 	

@@ -5,7 +5,7 @@
   id="myeclipse.1357017492582"
   context-root="/core"
   j2ee-spec="6.0"
-  archive="leadcloud-core.war">
+  archive="leadcloud1.war">
   <attributes>
     <attribute name="webrootdir" value="src/main/webapp" />
   </attributes>
